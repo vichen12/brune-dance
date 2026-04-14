@@ -31,7 +31,7 @@ export function KnowMe() {
             <span className="w-6 h-px bg-accent inline-block" />
             Barcelona · Argentina
           </p>
-          <h2 className="section-heading font-playfair font-bold text-4xl lg:text-5xl text-primary mb-4">
+          <h2 className="section-heading font-playfair font-bold italic text-4xl lg:text-5xl text-primary mb-4">
             {t("know_title") as string}
           </h2>
           <p className="font-playfair italic text-lg lg:text-xl mb-8 leading-snug"

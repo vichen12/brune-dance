@@ -90,7 +90,7 @@ export function Footer() {
             className="text-center mb-12"
           >
             <h2
-              className="font-playfair font-bold text-4xl md:text-5xl mb-2"
+              className="font-playfair font-bold italic text-4xl md:text-5xl mb-2"
               style={{ color: "var(--color-primary)" }}
             >
               BRUNELA

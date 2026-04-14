@@ -41,7 +41,7 @@ export function Hero() {
           </div>
 
           {/* Name */}
-          <h1 className="font-playfair font-bold text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight"
+          <h1 className="font-playfair font-bold italic text-7xl lg:text-8xl xl:text-9xl leading-none tracking-tight"
               style={{ color: "var(--color-primary)" }}>
             BRUNELA
           </h1>

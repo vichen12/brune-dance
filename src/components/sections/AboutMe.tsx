@@ -68,7 +68,7 @@ export function AboutMe() {
              style={{ color: "var(--color-gold)" }}>
             MI HISTORIA
           </p>
-          <h2 className="section-heading font-playfair font-bold text-4xl lg:text-5xl"
+          <h2 className="section-heading font-playfair font-bold italic text-4xl lg:text-5xl"
               style={{ color: "var(--color-body-text)" }}>
             {t("about_title") as string}
           </h2>

@@ -57,7 +57,7 @@ export function OnlineClasses() {
             <span className="inline-block w-10 h-px bg-white/40" />
           </div>
 
-          <h2 className="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+          <h2 className="font-playfair font-bold italic text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
             {t("online_title") as string}
           </h2>
 

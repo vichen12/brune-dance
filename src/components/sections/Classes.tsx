@@ -62,7 +62,7 @@ export function Classes() {
             {t("classes_eyebrow") as string}
             <span className="w-6 h-px inline-block" style={{ background: "var(--color-gold)" }} />
           </p>
-          <h2 className="section-heading font-playfair font-bold text-4xl lg:text-5xl"
+          <h2 className="section-heading font-playfair font-bold italic text-4xl lg:text-5xl"
               style={{ color: "var(--color-body-text)" }}>
             {t("classes_title") as string}
           </h2>
