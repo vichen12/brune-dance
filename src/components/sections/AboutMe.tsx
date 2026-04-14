@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 
 const STATS = [
-  { number: "1992",  label: "Primeros pasos", sub: "Mendoza, Argentina" },
+  { number: "2002",  label: "Primeros pasos", sub: "Mendoza, Argentina" },
   { number: "15+",   label: "Años de docencia", sub: "Desde 2011" },
   { number: "9",     label: "Años Fiesta Vendimia", sub: "Evento nacional" },
   { number: "RAD",   label: "Certificación", sub: "Royal Academy of Dance" },
@@ -12,10 +12,10 @@ const STATS = [
 
 const CHAPTERS = [
   {
-    era: "1992 – 2010",
+    era: "2002 – 2010",
     title: "La bailarina nace",
     paragraphs: [
-      "Comenzó el ballet a los **8 años** en Mendoza, Argentina, sumando danza contemporánea, teatro, flamenco, hip-hop y acondicionamiento físico.",
+      "Nació en **1994** en Mendoza, Argentina. Comenzó el ballet a los **8 años**, sumando danza contemporánea, teatro, flamenco, hip-hop y acondicionamiento físico.",
       "Subió a los principales escenarios interpretando **El Lago de los Cisnes, Don Quijote, El Cascanueces, Giselle y Coppélia**.",
       "Se formó junto a figuras como **Eleonora Cassano, Paloma Herrera y Julio Bocca**.",
     ],

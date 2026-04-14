@@ -24,7 +24,7 @@ export const translations = {
 
     about_title: "SOBRE MÍ",
     about_p1:
-      "Me llamo Brunela, y mi camino en el ballet comenzó a los 8 años. A los 31, sigo dedicada al arte de la danza. Mi pasión por el ballet y las artes ha sido una constante en mi vida. Comencé en Mendoza, Argentina, incorporando danza contemporánea, teatro, flamenco, hip-hop y acondicionamiento físico.",
+      "Me llamo Brunela, nací en 1994 en Mendoza, Argentina. Mi camino en el ballet comenzó a los 8 años. Incorporé danza contemporánea, teatro, flamenco, hip-hop y acondicionamiento físico.",
     about_p2:
       "Participé en producciones de Don Quijote, La Bella Durmiente, Serenata, El Lago de los Cisnes, El Cascanueces, Coppélia y Giselle. Me formé con Eleonora Cassano, Paloma Herrera, Julio Bocca, Silvia Bazilis, Julio Toto y Katy Gallo.",
     about_p3:
@@ -130,7 +130,7 @@ export const translations = {
 
     about_title: "ABOUT ME",
     about_p1:
-      "My name is Brunela, and my ballet journey began at age 8. At 31, I'm still dedicated to the art of dance. I started in Mendoza, Argentina, gradually adding contemporary, theater, flamenco, hip-hop, and physical conditioning.",
+      "My name is Brunela, born in 1994 in Mendoza, Argentina. My ballet journey began at age 8, gradually adding contemporary dance, theater, flamenco, hip-hop, and physical conditioning.",
     about_p2:
       "I've performed in Don Quixote, The Sleeping Beauty, Serenade, Swan Lake, The Nutcracker, Coppélia and Giselle. I trained with Eleonora Cassano, Paloma Herrera, Julio Bocca, Silvia Bazilis, Julio Toto and Katy Gallo.",
     about_p3:
@@ -236,7 +236,7 @@ export const translations = {
 
     about_title: "À PROPOS",
     about_p1:
-      "Je m'appelle Brunela, mon parcours dans le ballet a commencé à 8 ans. À 31 ans, je reste dédiée à l'art de la danse. J'ai commencé à Mendoza, Argentine, en intégrant progressivement la danse contemporaine, le théâtre, le flamenco et le hip-hop.",
+      "Je m'appelle Brunela, née en 1994 à Mendoza, Argentine. Mon parcours dans le ballet a commencé à 8 ans, en intégrant progressivement la danse contemporaine, le théâtre, le flamenco et le hip-hop.",
     about_p2:
       "J'ai participé à Don Quichotte, La Belle au Bois Dormant, Sérénade, Le Lac des Cygnes, Casse-Noisette, Coppélia et Giselle. Je me suis formée avec Eleonora Cassano, Paloma Herrera, Julio Bocca et d'autres figures éminentes.",
     about_p3:

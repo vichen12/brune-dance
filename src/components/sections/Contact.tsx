@@ -16,13 +16,6 @@ const CLASS_OPTIONS = [
   "Clases Online",
 ];
 
-// CONFIGURACIÓN — reemplazar con tu URL de Google Apps Script
-// SETUP INSTRUCTIONS:
-// 1. Crear una Google Sheet nueva
-// 2. Extensions > Apps Script > pegar el doPost de abajo
-// 3. Deploy > New deployment > Web App (Execute as: Me, Access: Anyone)
-// 4. Copiar la URL aquí:
-const GOOGLE_SCRIPT_URL = "PEGA_TU_URL_AQUI";
 
 export function Contact() {
   const { t } = useI18n();
@@ -34,40 +27,21 @@ export function Contact() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      clase: (form.elements.namedItem("clase") as HTMLSelectElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-    };
+    const name    = (form.elements.namedItem("name")    as HTMLInputElement).value;
+    const email   = (form.elements.namedItem("email")   as HTMLInputElement).value;
+    const phone   = (form.elements.namedItem("phone")   as HTMLInputElement).value;
+    const clase   = (form.elements.namedItem("clase")   as HTMLInputElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
     setStatus("sending");
 
-    // Try Google Sheets
-    if (GOOGLE_SCRIPT_URL !== "PEGA_TU_URL_AQUI") {
-      try {
-        await fetch(GOOGLE_SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        setStatus("success");
-        formRef.current?.reset();
-        return;
-      } catch {
-        // fall through to WhatsApp
-      }
-    }
-
-    // WhatsApp fallback
     const msg = encodeURIComponent(
-      `Hola Brunela! Soy ${data.name}.\nClase: ${data.clase}\nTel: ${data.phone}\nEmail: ${data.email}\n${data.message}`
+      `Hola Brunela! Soy ${name}.\nClase de interés: ${clase}\nTeléfono: ${phone}\nEmail: ${email}${message ? `\n\n${message}` : ""}`
     );
     window.open(`https://wa.me/34627323794?text=${msg}`, "_blank");
     setStatus("success");
     formRef.current?.reset();
+    setSelectedClass("");
   }
 
   return (
