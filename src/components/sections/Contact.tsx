@@ -116,13 +116,8 @@ export function Contact() {
           </p>
 
           <h2
-            className="leading-none mb-6"
-            style={{
-              fontFamily: "var(--font-script)",
-              fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
-              color: "var(--color-primary)",
-              lineHeight: 1.1,
-            }}
+            className="font-playfair font-bold italic text-5xl xl:text-6xl leading-none mb-6"
+            style={{ color: "var(--color-primary)" }}
           >
             {t("contact_title") as string}
           </h2>
@@ -182,7 +177,7 @@ export function Contact() {
         >
           {/* Mobile heading */}
           <div className="lg:hidden text-center mb-10">
-            <h2 className="font-playfair font-bold text-4xl" style={{ color: "var(--color-primary)" }}>
+            <h2 className="font-playfair font-bold italic text-4xl" style={{ color: "var(--color-primary)" }}>
               {t("contact_title") as string}
             </h2>
             <p className="font-playfair italic text-xl mt-3" style={{ color: "var(--color-primary)" }}>
