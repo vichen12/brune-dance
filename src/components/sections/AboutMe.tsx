@@ -73,7 +73,7 @@ export function AboutMe() {
             {t("about_title") as string}
           </h2>
           <p className="font-playfair italic text-lg lg:text-xl mt-6"
-             style={{ color: "var(--color-primary-light)", opacity: 0.8 }}>
+             style={{ color: "var(--color-gold)" }}>
             Una historia escrita en movimiento.
           </p>
         </motion.div>

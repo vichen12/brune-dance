@@ -72,7 +72,7 @@ export function Hero() {
 
           {/* Decorative italic tagline */}
           <p className="font-playfair italic text-xl lg:text-2xl mb-5 leading-snug"
-             style={{ color: "var(--color-primary-light)", opacity: 0.85 }}>
+             style={{ color: "var(--color-gold)" }}>
             Arte, técnica y pasión desde Argentina.
           </p>
 
