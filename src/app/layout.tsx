@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Nunito } from "next/font/google";
+import { Cormorant_Garamond, Nunito } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/components/providers/I18nProvider";
 
-const playfair = Playfair_Display({
+const playfair = Cormorant_Garamond({
   variable: "--font-playfair-loaded",
   subsets: ["latin"],
+  weight: ["300","400","600","700"],
+  style: ["normal","italic"],
   display: "swap",
 });
 
