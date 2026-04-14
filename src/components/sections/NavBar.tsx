@@ -81,28 +81,22 @@ export function NavBar() {
               </div>
             </a>
 
-            {/* Desktop nav + tagline */}
-            <div className="hidden md:flex flex-col items-center gap-1.5">
-              <div className="flex items-center gap-8">
-                {NAV_LINKS.map(({ key, href }) => (
-                  <a
-                    key={key}
-                    href={href}
-                    className={`nav-link font-lato text-[0.72rem] font-bold tracking-[.18em] uppercase transition-colors duration-200 ${
-                      activeId === href.slice(1) ? "active" : ""
-                    }`}
-                    style={{
-                      color: activeId === href.slice(1) ? "var(--color-primary)" : "var(--color-body-text)",
-                    }}
-                  >
-                    {t(key as Parameters<typeof t>[0]) as string}
-                  </a>
-                ))}
-              </div>
-              <p className="font-lato text-[0.50rem] tracking-[.22em] uppercase"
-                 style={{ color: "var(--color-subtle)", opacity: 0.55 }}>
-                Ballet · PBT · PCT · Pilates · Stretching
-              </p>
+            {/* Desktop nav */}
+            <div className="hidden md:flex items-center gap-8">
+              {NAV_LINKS.map(({ key, href }) => (
+                <a
+                  key={key}
+                  href={href}
+                  className={`nav-link font-lato text-[0.72rem] font-bold tracking-[.18em] uppercase transition-colors duration-200 ${
+                    activeId === href.slice(1) ? "active" : ""
+                  }`}
+                  style={{
+                    color: activeId === href.slice(1) ? "var(--color-primary)" : "var(--color-body-text)",
+                  }}
+                >
+                  {t(key as Parameters<typeof t>[0]) as string}
+                </a>
+              ))}
             </div>
 
             {/* Lang + Hamburger */}
