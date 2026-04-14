@@ -104,14 +104,12 @@ export function Hero() {
           </div>
 
           {/* Name */}
-          <h1 className="leading-none"
+          <h1 className="font-playfair font-bold italic leading-none tracking-tight"
               style={{
-                fontFamily: "var(--font-script)",
-                fontSize: "clamp(3.8rem, 18vw, 10rem)",
+                fontSize: "clamp(3.4rem, 17vw, 9.5rem)",
                 color: "var(--color-primary)",
-                lineHeight: 1.1,
               }}>
-            Brunela
+            BRUNELA
           </h1>
 
           {/* Animated cycling word */}
