@@ -21,6 +21,7 @@ export function AuroraBg() {
       <div className="aurora-blob aurora-blob-2" />
       <div className="aurora-blob aurora-blob-3" />
       <div className="aurora-blob aurora-blob-4" />
+      <div className="aurora-blob aurora-blob-5" />
 
       {/* Floating particles */}
       {PARTICLES.map((p, i) => (

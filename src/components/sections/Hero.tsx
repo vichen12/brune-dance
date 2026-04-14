@@ -63,12 +63,18 @@ export function Hero() {
           </div>
 
           {/* Divider */}
-          <div className="flex items-center gap-3 mb-7">
+          <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-px" style={{ background: "var(--color-accent)" }} />
             <div className="w-2 h-2 rounded-full" style={{ background: "var(--color-primary)" }} />
             <div className="w-16 h-px"
                  style={{ background: "linear-gradient(90deg, var(--color-primary), var(--color-gold))" }} />
           </div>
+
+          {/* Decorative italic tagline */}
+          <p className="font-playfair italic text-xl lg:text-2xl mb-5 leading-snug"
+             style={{ color: "var(--color-primary-light)", opacity: 0.85 }}>
+            Arte, técnica y pasión desde Argentina.
+          </p>
 
           <p className="font-lato font-light text-base lg:text-lg leading-relaxed max-w-lg mb-10"
              style={{ color: "var(--color-body-text)" }}>

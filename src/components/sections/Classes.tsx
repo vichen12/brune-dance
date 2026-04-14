@@ -66,7 +66,11 @@ export function Classes() {
               style={{ color: "var(--color-body-text)" }}>
             {t("classes_title") as string}
           </h2>
-          <p className="mt-5 max-w-xl mx-auto font-lato font-light text-sm leading-relaxed"
+          <p className="font-playfair italic text-lg lg:text-xl mt-5 mb-3"
+             style={{ color: "var(--color-gold)" }}>
+            Cada disciplina, una historia.
+          </p>
+          <p className="max-w-xl mx-auto font-lato font-light text-sm leading-relaxed"
              style={{ color: "var(--color-muted)" }}>
             {t("classes_subtitle") as string}
           </p>

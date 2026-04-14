@@ -123,8 +123,8 @@ export function Contact() {
           </h2>
 
           <p
-            className="font-playfair italic text-lg leading-relaxed mb-10 max-w-xs"
-            style={{ color: "var(--color-muted)" }}
+            className="font-playfair italic text-2xl xl:text-3xl leading-snug mb-10 max-w-sm"
+            style={{ color: "var(--color-primary)" }}
           >
             {t("contact_tagline") as string}
           </p>
@@ -180,7 +180,7 @@ export function Contact() {
             <h2 className="font-playfair font-bold text-4xl" style={{ color: "var(--color-primary)" }}>
               {t("contact_title") as string}
             </h2>
-            <p className="font-playfair italic mt-2" style={{ color: "var(--color-muted)" }}>
+            <p className="font-playfair italic text-xl mt-3" style={{ color: "var(--color-primary)" }}>
               {t("contact_tagline") as string}
             </p>
           </div>
