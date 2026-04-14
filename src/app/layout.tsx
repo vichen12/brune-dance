@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Nunito } from "next/font/google";
+import { Cormorant_Garamond, Nunito, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/components/providers/I18nProvider";
 
@@ -15,6 +15,13 @@ const lato = Nunito({
   variable: "--font-lato-loaded",
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
+  display: "swap",
+});
+
+const script = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -58,7 +65,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${lato.variable} scroll-smooth`}>
+    <html lang="es" className={`${playfair.variable} ${lato.variable} ${script.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"

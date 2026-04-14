@@ -90,10 +90,15 @@ export function Footer() {
             className="text-center mb-12"
           >
             <h2
-              className="font-playfair font-bold italic text-4xl md:text-5xl mb-2"
-              style={{ color: "var(--color-primary)" }}
+              className="mb-2"
+              style={{
+                fontFamily: "var(--font-script)",
+                fontSize: "clamp(2.8rem, 8vw, 4rem)",
+                color: "var(--color-primary)",
+                lineHeight: 1.1,
+              }}
             >
-              BRUNELA
+              Brunela
             </h2>
             <p
               className="font-lato text-[0.62rem] font-bold tracking-[.35em] uppercase mb-4"

@@ -116,8 +116,13 @@ export function Contact() {
           </p>
 
           <h2
-            className="font-playfair font-bold italic text-5xl xl:text-6xl leading-none mb-6"
-            style={{ color: "var(--color-primary)" }}
+            className="leading-none mb-6"
+            style={{
+              fontFamily: "var(--font-script)",
+              fontSize: "clamp(3.5rem, 6vw, 5.5rem)",
+              color: "var(--color-primary)",
+              lineHeight: 1.1,
+            }}
           >
             {t("contact_title") as string}
           </h2>

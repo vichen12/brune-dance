@@ -105,15 +105,15 @@ export function AboutMe() {
               >
                 {s.number}
               </span>
-              <p className="font-playfair font-bold leading-none mb-3 relative z-10"
-                 style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", color: "var(--color-primary)" }}>
+              <p className="font-playfair font-bold italic leading-none mb-2 relative z-10"
+                 style={{ fontSize: "clamp(2.4rem, 8vw, 3.5rem)", color: "var(--color-primary)" }}>
                 {s.number}
               </p>
-              <p className="font-lato font-bold text-[0.68rem] uppercase tracking-[.18em] mb-1 relative z-10"
+              <p className="font-lato font-bold text-[0.62rem] lg:text-[0.68rem] uppercase tracking-[.15em] mb-0.5 relative z-10"
                  style={{ color: "var(--color-body-text)" }}>
                 {s.label}
               </p>
-              <p className="font-lato font-light text-[0.62rem] relative z-10"
+              <p className="font-lato font-light text-[0.58rem] lg:text-[0.62rem] relative z-10"
                  style={{ color: "var(--color-muted)" }}>
                 {s.sub}
               </p>

@@ -100,8 +100,8 @@ export function Classes() {
           ))}
         </div>
 
-        {/* 2-col grid — mobile */}
-        <div className="grid grid-cols-2 gap-3 md:hidden" style={{ gridAutoRows: "200px" }}>
+        {/* Mobile grid — uniform 2×3 */}
+        <div className="md:hidden grid grid-cols-2 gap-2.5" style={{ gridAutoRows: "220px" }}>
           {CLASSES.map((cls, i) => (
             <ClassCard
               key={cls.id}
