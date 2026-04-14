@@ -1,26 +1,291 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* =========================================================
+   DESIGN TOKENS — Tailwind v4 @theme
+   ========================================================= */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand colors — vibrant rose palette */
+  --color-primary:       #C8384D;
+  --color-primary-light: #E8607A;
+  --color-primary-dark:  #8B1A2E;
+  --color-accent:        #F0A0B8;
+  --color-gold:          #C4956A;
+
+  /* Backgrounds */
+  --color-rose-bg:      #FFF5F7;
+  --color-rose-section: #FDE8EE;
+  --color-rose-card:    #FFFAFC;
+
+  /* Text — deep wine tones (NOT boring gray) */
+  --color-body-text:    #2D1520;
+  --color-muted:        #7D5060;
+  --color-subtle:       #A07585;
+
+  /* Fonts */
+  --font-playfair: "Playfair Display", serif;
+  --font-lato:     "Lato", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   BASE
+   ========================================================= */
+:root {
+  --background: #FFF5F7;
+  --foreground: #2D1520;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(ellipse 90% 60% at 15% 10%, rgba(232,96,122,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 80% at 85% 30%, rgba(200,56,77,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 70%, rgba(240,160,184,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 10% 80%, rgba(196,149,106,0.12) 0%, transparent 50%),
+    #FFF0F4;
+  background-attachment: fixed;
+  background-size: 200% 200%, 180% 180%, 220% 220%, 160% 160%, cover;
+  animation: bg-shift 20s ease-in-out infinite;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
+::-webkit-scrollbar          { width: 5px; }
+::-webkit-scrollbar-track    { background: #FFF5F7; }
+::-webkit-scrollbar-thumb    { background: #F0A0B8; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #C8384D; }
+
+/* =========================================================
+   AURORA BACKGROUND ANIMATIONS
+   ========================================================= */
+@keyframes aurora-1 {
+  0%,100% { transform: translate(0%,0%) scale(1) rotate(0deg); }
+  25%      { transform: translate(-4%,8%) scale(1.12) rotate(8deg); }
+  50%      { transform: translate(7%,-6%) scale(0.92) rotate(-6deg); }
+  75%      { transform: translate(3%,11%) scale(1.08) rotate(5deg); }
+}
+@keyframes aurora-2 {
+  0%,100% { transform: translate(0%,0%) scale(1.08) rotate(0deg); }
+  33%      { transform: translate(9%,-7%) scale(0.92) rotate(-10deg); }
+  66%      { transform: translate(-7%,9%) scale(1.18) rotate(7deg); }
+}
+@keyframes aurora-3 {
+  0%,100% { transform: translate(0%,0%) scale(1) rotate(0deg); }
+  40%      { transform: translate(-10%,-6%) scale(1.25) rotate(12deg); }
+  80%      { transform: translate(8%,8%) scale(0.88) rotate(-8deg); }
+}
+@keyframes aurora-4 {
+  0%,100% { transform: translate(0%,0%) scale(0.9); }
+  50%      { transform: translate(6%,-12%) scale(1.15); }
+}
+
+@keyframes bg-shift {
+  0%,100% { background-position: 0% 0%, 100% 30%, 50% 80%, 10% 100%; }
+  25%      { background-position: 5% 5%, 95% 20%, 45% 75%, 15% 95%; }
+  50%      { background-position: 10% 2%, 90% 35%, 55% 85%, 5% 90%; }
+  75%      { background-position: 3% 8%, 98% 25%, 48% 70%, 12% 98%; }
+}
+
+@keyframes float-up {
+  0%   { transform: translateY(0) translateX(0) scale(1);   opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 0.6; }
+  100% { transform: translateY(-100vh) translateX(12px) scale(0.5); opacity: 0; }
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0;
+  mix-blend-mode: multiply;
+}
+
+.bg-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,160,184,0.9), rgba(200,56,77,0.5));
+  pointer-events: none;
+  animation: float-up linear infinite;
+}
+.aurora-blob-1 {
+  background: radial-gradient(circle, #F0A0B8 0%, #E8607A 60%, transparent 80%);
+  width: 55vw; height: 55vw;
+  top: -15%; left: -10%;
+  animation: aurora-1 14s ease-in-out infinite;
+  opacity: 0.55;
+}
+.aurora-blob-2 {
+  background: radial-gradient(circle, #C8384D 0%, #F0A0B8 60%, transparent 80%);
+  width: 45vw; height: 45vw;
+  top: 10%; right: -12%;
+  animation: aurora-2 11s ease-in-out infinite 1s;
+  opacity: 0.40;
+}
+.aurora-blob-3 {
+  background: radial-gradient(circle, #FFCDD8 0%, #F0A0B8 50%, transparent 75%);
+  width: 60vw; height: 60vw;
+  bottom: -20%; left: 20%;
+  animation: aurora-3 16s ease-in-out infinite 0.5s;
+  opacity: 0.35;
+}
+.aurora-blob-4 {
+  background: radial-gradient(circle, #C4956A 0%, #E8A090 50%, transparent 75%);
+  width: 35vw; height: 35vw;
+  top: 40%; left: 5%;
+  animation: aurora-4 9s ease-in-out infinite 2s;
+  opacity: 0.20;
+}
+
+/* =========================================================
+   GRADIENT TEXT
+   ========================================================= */
+.gradient-text {
+  background: linear-gradient(135deg, #C8384D 0%, #E8607A 40%, #C4956A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-light {
+  background: linear-gradient(135deg, #E8607A 0%, #F0A0B8 60%, #C4956A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =========================================================
+   SECTION TITLE FLOURISH
+   ========================================================= */
+.section-heading {
+  position: relative;
+  display: inline-block;
+}
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 2.5px;
+  background: linear-gradient(90deg, transparent, #C8384D, #C4956A, transparent);
+  border-radius: 99px;
+}
+
+/* =========================================================
+   NAV LINK UNDERLINE
+   ========================================================= */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1.5px;
+  background: linear-gradient(90deg, #C8384D, #C4956A);
+  transition: width 0.35s cubic-bezier(.4,0,.2,1);
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+/* =========================================================
+   FLOATING LABELS (Contact Form)
+   ========================================================= */
+.float-group {
+  position: relative;
+  padding-top: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.float-group input,
+.float-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid #F0A0B8;
+  background: transparent;
+  padding: 0.5rem 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  color: #2D1520;
+  outline: none;
+  transition: border-color 0.25s;
+}
+.float-group textarea  { resize: vertical; min-height: 88px; }
+.float-group input:focus,
+.float-group textarea:focus { border-bottom-color: #C8384D; }
+.float-group label {
+  position: absolute;
+  top: 1.75rem; left: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  color: #bbb;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+.float-group input:focus ~ label,
+.float-group input:not(:placeholder-shown) ~ label,
+.float-group textarea:focus ~ label,
+.float-group textarea:not(:placeholder-shown) ~ label {
+  top: 0;
+  font-size: 0.68rem;
+  color: #C8384D;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SCROLL PROGRESS BAR
+   ========================================================= */
+#progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 3px; z-index: 200;
+  background: linear-gradient(90deg, #F0A0B8, #C8384D, #C4956A);
+  transform-origin: left center;
+  width: 0%;
+}
+
+/* =========================================================
+   IMAGE KEN BURNS HOVER
+   ========================================================= */
+.img-hover img {
+  transition: transform 0.6s cubic-bezier(.25,.46,.45,.94);
+}
+.img-hover:hover img { transform: scale(1.06); }
+
+/* =========================================================
+   WHATSAPP FLOATING PULSE
+   ========================================================= */
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(200,56,77,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(200,56,77,0); }
+  100% { box-shadow: 0 0 0 0 rgba(200,56,77,0); }
+}
+.wa-pulse { animation: wa-pulse 2.2s ease-out infinite; }
+
+/* =========================================================
+   CARD GLASS
+   ========================================================= */
+.card-glass {
+  background: rgba(255,250,252,0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(240,160,184,0.25);
+}
+
+/* =========================================================
+   LOGO PULSE
+   ========================================================= */
+@keyframes logo-pulse {
+  0%,100% { filter: drop-shadow(0 0 28px rgba(240,160,184,.55)); transform: scale(1); }
+  50%      { filter: drop-shadow(0 0 55px rgba(200,56,77,.80)); transform: scale(1.04); }
+}
+.logo-pulse { animation: logo-pulse 3.5s ease-in-out infinite; }
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
