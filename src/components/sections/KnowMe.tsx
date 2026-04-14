@@ -20,37 +20,6 @@ export function KnowMe() {
     <section id="know-me" className="py-16 lg:py-32 overflow-hidden" aria-label="Conóceme">
       <div className="max-w-7xl mx-auto px-5 lg:px-10">
 
-        {/* Mobile: photo top full-width banner */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:hidden relative rounded-3xl overflow-hidden mb-10"
-          style={{ height: "55vw", minHeight: "220px", maxHeight: "340px" }}
-        >
-          <Image
-            src="/fotos-landing/about-1.jpg"
-            alt="Brunela en postura de danza"
-            fill
-            className="object-cover object-top"
-            loading="lazy"
-          />
-          {/* Overlay gradient */}
-          <div className="absolute inset-0"
-               style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(45,21,32,0.45) 100%)" }} />
-          {/* Mobile badge overlay */}
-          <div className="absolute bottom-4 left-5">
-            <p className="font-lato text-[0.6rem] font-bold tracking-[.3em] uppercase text-white/70 mb-1">
-              Barcelona · Argentina
-            </p>
-            <h2 className="font-playfair font-bold italic text-3xl text-white leading-none">
-              {t("know_title") as string}
-            </h2>
-          </div>
-        </motion.div>
-
-        {/* Desktop: 2-col layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Text + disciplines */}
@@ -60,12 +29,11 @@ export function KnowMe() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Desktop header */}
-            <p className="hidden lg:flex font-lato text-[0.65rem] font-bold tracking-[.32em] text-accent uppercase mb-4 items-center gap-2">
+            <p className="font-lato text-[0.65rem] font-bold tracking-[.32em] text-accent uppercase mb-4 flex items-center gap-2">
               <span className="w-6 h-px bg-accent inline-block" />
               Barcelona · Argentina
             </p>
-            <h2 className="hidden lg:block section-heading font-playfair font-bold italic text-4xl lg:text-5xl text-primary mb-4">
+            <h2 className="section-heading font-playfair font-bold italic text-4xl lg:text-5xl text-primary mb-4">
               {t("know_title") as string}
             </h2>
             <p className="font-playfair italic text-lg lg:text-xl mb-6 leading-snug"
@@ -112,20 +80,21 @@ export function KnowMe() {
             </div>
           </motion.div>
 
-          {/* Photo — desktop only */}
+          {/* Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden lg:block img-hover rounded-2xl overflow-hidden shadow-2xl shadow-primary/12"
+            className="img-hover rounded-3xl overflow-hidden shadow-2xl shadow-primary/12"
+            style={{ aspectRatio: "4/5", maxHeight: "520px" }}
           >
             <Image
               src="/fotos-landing/about-1.jpg"
               alt="Brunela en postura de danza"
               width={600}
               height={750}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               loading="lazy"
             />
           </motion.div>

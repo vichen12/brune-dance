@@ -69,20 +69,6 @@ export function Hero() {
               />
             </div>
 
-            {/* Mobile floating badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-              className="lg:hidden absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap
-                         px-4 py-2 rounded-full font-lato font-bold text-[0.65rem] tracking-[.2em] uppercase text-white"
-              style={{
-                background: "linear-gradient(135deg, var(--color-primary), var(--color-primary-light))",
-                boxShadow: "0 4px 16px rgba(200,56,77,0.35)",
-              }}
-            >
-              Barcelona · España
-            </motion.div>
           </div>
         </motion.div>
 
