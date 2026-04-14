@@ -82,7 +82,7 @@ export function NavBar() {
             </a>
 
             {/* Desktop nav + tagline */}
-            <div className="hidden md:flex flex-col items-center gap-0.5">
+            <div className="hidden md:flex flex-col items-center gap-1.5">
               <div className="flex items-center gap-8">
                 {NAV_LINKS.map(({ key, href }) => (
                   <a
@@ -99,8 +99,8 @@ export function NavBar() {
                   </a>
                 ))}
               </div>
-              <p className="font-lato text-[0.52rem] tracking-[.2em] uppercase"
-                 style={{ color: "var(--color-subtle)", opacity: 0.7 }}>
+              <p className="font-lato text-[0.50rem] tracking-[.22em] uppercase"
+                 style={{ color: "var(--color-subtle)", opacity: 0.55 }}>
                 Ballet · PBT · PCT · Pilates · Stretching
               </p>
             </div>
