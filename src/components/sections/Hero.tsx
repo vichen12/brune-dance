@@ -55,7 +55,8 @@ export function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -40, opacity: 0 }}
                 transition={{ duration: 0.45, ease: "easeInOut" }}
-                className="font-lato font-light text-lg lg:text-xl tracking-[.32em] uppercase gradient-text"
+                className="font-lato font-light text-lg lg:text-xl tracking-[.32em] uppercase"
+                style={{ color: "var(--color-gold)" }}
               >
                 {words[wordIndex]}
               </motion.p>
