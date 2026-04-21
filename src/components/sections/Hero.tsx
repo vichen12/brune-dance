@@ -85,7 +85,7 @@ export function Hero() {
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--color-primary)" }} />
             <span className="font-lato text-[0.68rem] font-bold tracking-[.22em] uppercase"
                   style={{ color: "var(--color-primary)" }}>
-              Barcelona, España
+              {t("hero_location") as string}
             </span>
           </div>
 
@@ -126,7 +126,7 @@ export function Hero() {
           {/* Decorative italic tagline */}
           <p className="font-playfair italic text-lg lg:text-2xl mb-4 leading-snug"
              style={{ color: "var(--color-gold)" }}>
-            Arte, técnica y pasión desde Argentina.
+            {t("hero_tagline") as string}
           </p>
 
           <p className="font-lato font-light text-sm lg:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-8"

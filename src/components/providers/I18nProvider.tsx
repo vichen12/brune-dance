@@ -8,7 +8,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("brunelaLang") as Lang | null;
-    if (stored && ["es", "en", "fr"].includes(stored)) {
+    if (stored && ["es", "en", "fr", "it"].includes(stored)) {
       setLangState(stored);
     }
   }, []);

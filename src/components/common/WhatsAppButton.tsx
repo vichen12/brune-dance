@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function WhatsAppButton() {
   return (
     <motion.a
-      href="https://wa.me/34627323794"
+      href="https://wa.me/34612491637"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chatear por WhatsApp con Brunela"

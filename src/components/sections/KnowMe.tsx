@@ -29,16 +29,19 @@ export function KnowMe() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-lato text-[0.65rem] font-bold tracking-[.32em] text-accent uppercase mb-4 flex items-center gap-2">
-              <span className="w-6 h-px bg-accent inline-block" />
-              Barcelona · Argentina
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-5 h-px inline-block" style={{ background: "var(--color-primary)", opacity: 0.5 }} />
+              <p className="font-playfair italic text-sm" style={{ color: "var(--color-primary)", opacity: 0.75 }}>
+                {t("know_location") as string}
+              </p>
+              <span className="w-5 h-px inline-block" style={{ background: "var(--color-primary)", opacity: 0.5 }} />
+            </div>
             <h2 className="section-heading font-playfair font-bold italic text-4xl lg:text-5xl text-primary mb-4">
               {t("know_title") as string}
             </h2>
             <p className="font-playfair italic text-lg lg:text-xl mb-6 leading-snug"
                style={{ color: "var(--color-gold)" }}>
-              Una artista que enseña con el cuerpo y el alma.
+              {t("know_tagline") as string}
             </p>
             <p className="font-lato font-light text-sm lg:text-base leading-relaxed text-body-text mb-8 max-w-lg">
               {t("know_bio") as string}

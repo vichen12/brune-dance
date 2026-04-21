@@ -3,43 +3,6 @@
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 
-const STATS = [
-  { number: "2002",  label: "Primeros pasos", sub: "Mendoza, Argentina" },
-  { number: "15+",   label: "Años de docencia", sub: "Desde 2011" },
-  { number: "9",     label: "Años Fiesta Vendimia", sub: "Evento nacional" },
-  { number: "RAD",   label: "Certificación", sub: "Royal Academy of Dance" },
-];
-
-const CHAPTERS = [
-  {
-    era: "2002 – 2010",
-    title: "La bailarina nace",
-    paragraphs: [
-      "Nació en **1994** en Mendoza, Argentina. Comenzó el ballet a los **8 años**, sumando danza contemporánea, teatro, flamenco, hip-hop y acondicionamiento físico.",
-      "Subió a los principales escenarios interpretando **El Lago de los Cisnes, Don Quijote, El Cascanueces, Giselle y Coppélia**.",
-      "Se formó junto a figuras como **Eleonora Cassano, Paloma Herrera y Julio Bocca**.",
-    ],
-  },
-  {
-    era: "2011 – 2019",
-    title: "La maestra emerge",
-    paragraphs: [
-      "En **2011** inició su carrera docente, graduándose como instructora de danza clásica.",
-      "En **2015** se incorporó a la **Fiesta de la Vendimia** — 1.000 artistas, miles de espectadores internacionales — durante **9 años consecutivos**.",
-      "En **2018** obtuvo el Título Técnico en Danza Clásica y Contemporánea.",
-    ],
-  },
-  {
-    era: "2020 – Hoy",
-    title: "Barcelona & el mundo",
-    paragraphs: [
-      "En **2020** obtuvo certificaciones: **PBT, PCT, Pilates Reformer, Pilates Mat, Stretching** y menciones CPD de la **Royal Academy of Dance** de Londres.",
-      "En **2021** se convirtió en coreógrafa y remontadora: **El Lago de los Cisnes, Bayadera, Serenata de Balanchine**.",
-      "Hoy, desde **Barcelona**, forma bailarines en clases presenciales y online, con **30K+** seguidores en Instagram.",
-    ],
-  },
-];
-
 function renderParagraph(text: string) {
   const parts = text.split(/\*\*(.*?)\*\*/g);
   return parts.map((part, i) =>
@@ -51,6 +14,43 @@ function renderParagraph(text: string) {
 
 export function AboutMe() {
   const { t } = useI18n();
+
+  const STATS = [
+    { number: "2002", label: t("about_stat1_label") as string, sub: t("about_stat1_sub") as string },
+    { number: "15+",  label: t("about_stat2_label") as string, sub: t("about_stat2_sub") as string },
+    { number: "9",    label: t("about_stat3_label") as string, sub: t("about_stat3_sub") as string },
+    { number: "RAD",  label: t("about_stat4_label") as string, sub: t("about_stat4_sub") as string },
+  ];
+
+  const CHAPTERS = [
+    {
+      era: "2002 – 2010",
+      title: t("about_ch1_title") as string,
+      paragraphs: [
+        t("about_ch1_p1") as string,
+        t("about_ch1_p2") as string,
+        t("about_ch1_p3") as string,
+      ],
+    },
+    {
+      era: t("about_ch2_era") as string,
+      title: t("about_ch2_title") as string,
+      paragraphs: [
+        t("about_ch2_p1") as string,
+        t("about_ch2_p2") as string,
+        t("about_ch2_p3") as string,
+      ],
+    },
+    {
+      era: t("about_ch3_era") as string,
+      title: t("about_ch3_title") as string,
+      paragraphs: [
+        t("about_ch3_p1") as string,
+        t("about_ch3_p2") as string,
+        t("about_ch3_p3") as string,
+      ],
+    },
+  ];
 
   return (
     <section id="about" className="py-24 lg:py-32 overflow-hidden" aria-label="Sobre mí">
@@ -66,7 +66,7 @@ export function AboutMe() {
         >
           <p className="font-lato text-[0.65rem] font-bold tracking-[.32em] uppercase mb-3"
              style={{ color: "var(--color-gold)" }}>
-            MI HISTORIA
+            {t("about_eyebrow") as string}
           </p>
           <h2 className="section-heading font-playfair font-bold italic text-4xl lg:text-5xl"
               style={{ color: "var(--color-body-text)" }}>
@@ -74,7 +74,7 @@ export function AboutMe() {
           </h2>
           <p className="font-playfair italic text-lg lg:text-xl mt-6"
              style={{ color: "var(--color-gold)" }}>
-            Una historia escrita en movimiento.
+            {t("about_tagline") as string}
           </p>
         </motion.div>
 
@@ -97,7 +97,6 @@ export function AboutMe() {
               className="flex flex-col items-center justify-center py-10 px-5 text-center relative overflow-hidden"
               style={{ borderRight: "1px solid rgba(200,56,77,0.15)", borderBottom: "1px solid rgba(200,56,77,0.15)" }}
             >
-              {/* Watermark */}
               <span
                 className="absolute inset-0 flex items-center justify-center font-playfair font-bold select-none pointer-events-none"
                 style={{ fontSize: "5rem", color: "var(--color-primary)", opacity: 0.04, lineHeight: 1 }}
@@ -137,7 +136,6 @@ export function AboutMe() {
                 border: "1px solid rgba(240,160,184,0.22)",
               }}
             >
-              {/* Era watermark */}
               <span
                 className="absolute -top-2 -right-1 font-playfair font-bold select-none pointer-events-none leading-none"
                 style={{ fontSize: "4.5rem", color: "var(--color-primary)", opacity: 0.05 }}
@@ -146,7 +144,6 @@ export function AboutMe() {
                 {i + 1}
               </span>
 
-              {/* Era badge */}
               <span
                 className="inline-block px-3 py-1 rounded-full font-lato font-bold text-[0.6rem] tracking-[.25em] uppercase mb-4"
                 style={{
@@ -158,7 +155,6 @@ export function AboutMe() {
                 {ch.era}
               </span>
 
-              {/* Left accent + title */}
               <div className="flex items-start gap-3 mb-5">
                 <div className="w-0.5 rounded-full shrink-0 mt-1"
                      style={{ height: "2.8rem", background: "linear-gradient(to bottom, var(--color-primary), var(--color-gold))" }} />
@@ -168,7 +164,6 @@ export function AboutMe() {
                 </h3>
               </div>
 
-              {/* Paragraphs */}
               <div className="space-y-2.5">
                 {ch.paragraphs.map((p, j) => (
                   <p key={j} className="font-lato font-light text-sm leading-relaxed"

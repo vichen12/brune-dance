@@ -48,7 +48,7 @@ src/
       AboutMe.tsx        — Editorial stats grid + 3 chapter cards
       Classes.tsx        — Bento desktop (3-col) + uniform 2×3 mobile grid
       OnlineClasses.tsx  — Rose gradient CTA section
-      Contact.tsx        — Dance form → always submits via WhatsApp wa.me/34627323794
+      Contact.tsx        — Dance form → always submits via WhatsApp wa.me/34612491637
       Footer.tsx         — Wave top, social icons, Dallape Systems link
 ```
 
@@ -87,17 +87,17 @@ src/
 - Now based in **Barcelona**, 30K+ Instagram followers
 
 ## i18n System
-- Languages: `es` (default), `en`, `fr`
+- Languages: `es` (default), `en`, `fr`, `it`
 - Persisted in `localStorage` key `brunelaLang`
 - Hook: `const { t, lang, setLang } = useI18n()`
 - `t(key)` returns `string | string[]`
 - `hero_words` is `string[]` (cycling animated words)
-- Add new keys to ALL 3 language objects in `src/lib/i18n.ts`
+- Add new keys to ALL 4 language objects in `src/lib/i18n.ts`
 
 ## Contact Form
-- **Always submits via WhatsApp**: `wa.me/34627323794`
+- **Always submits via WhatsApp**: `wa.me/34612491637`
 - Prefills message with: name, class of interest, phone, email, message
-- Phone: `+34 627 323 794`
+- Phone: `+34 612 491 637`
 
 ## Dev Commands
 ```bash

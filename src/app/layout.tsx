@@ -65,10 +65,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${playfair.variable} ${lato.variable} ${script.variable} scroll-smooth`}>
-      <head>
+    <html lang="es" className={`${playfair.variable} ${lato.variable} ${script.variable} scroll-smooth`} suppressHydrationWarning>
+      <head suppressHydrationWarning>
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -76,7 +77,7 @@ export default function RootLayout({
               name: "Brunela Dance Trainer",
               description:
                 "Profesora de ballet, PBT, PCT, Pilates Reformer y Stretching en Barcelona. Clases presenciales y online.",
-              telephone: "+34627323794",
+              telephone: "+34612491637",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Barcelona",

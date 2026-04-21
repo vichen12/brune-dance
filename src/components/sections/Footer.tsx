@@ -186,7 +186,7 @@ export function Footer() {
               className="font-lato text-[0.65rem]"
               style={{ color: "var(--color-subtle)", opacity: 0.7 }}
             >
-              Diseñado por{" "}
+              {t("footer_designed_by") as string}{" "}
               <a
                 href="https://www.instagram.com/dallapesystems/"
                 target="_blank"

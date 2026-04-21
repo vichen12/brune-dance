@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useI18n, type Lang } from "@/lib/i18n";
 
-const LANGS: Lang[] = ["es", "en", "fr"];
+const LANGS: Lang[] = ["es", "en", "fr", "it"];
 const NAV_LINKS = [
   { key: "nav_home",    href: "#home" },
   { key: "nav_classes", href: "#classes" },

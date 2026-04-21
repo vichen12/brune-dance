@@ -1,10 +1,30 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 
 export function OnlineClasses() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const featureLabels: Record<string, Record<string, string>> = {
+    f1: { es: "Clases completas", en: "Full classes", fr: "Cours complets", it: "Lezioni complete" },
+    f2: { es: "Tutoriales", en: "Tutorials", fr: "Tutoriels", it: "Tutorial" },
+    f3: { es: "Todos los niveles", en: "All levels", fr: "Tous niveaux", it: "Tutti i livelli" },
+  };
+
+  function handleNotify(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    const msg = encodeURIComponent(
+      `Hola Brunela! Quiero que me avises cuando lances tu plataforma de videos. Mi email es: ${email}`
+    );
+    window.open(`https://wa.me/34612491637?text=${msg}`, "_blank");
+    setSubmitted(true);
+    setEmail("");
+  }
 
   return (
     <section
@@ -27,14 +47,7 @@ export function OnlineClasses() {
 
       {/* Ballet silhouette watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <svg
-          width="420"
-          height="420"
-          viewBox="0 0 100 100"
-          fill="white"
-          opacity="0.04"
-          aria-hidden="true"
-        >
+        <svg width="420" height="420" viewBox="0 0 100 100" fill="white" opacity="0.04" aria-hidden="true">
           <ellipse cx="50" cy="20" rx="6" ry="6" />
           <path d="M50 26 L44 55 L38 85 M50 26 L56 55 L62 85" stroke="white" strokeWidth="3" fill="none" />
           <path d="M44 40 L30 35 M56 40 L70 35" stroke="white" strokeWidth="3" fill="none" />
@@ -49,19 +62,36 @@ export function OnlineClasses() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 mb-5">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="inline-block w-10 h-px bg-white/40" />
             <p className="font-lato text-[0.65rem] font-bold tracking-[.3em] uppercase text-white/70">
-              En línea · Online · En ligne
+              {t("online_eyebrow") as string}
             </p>
             <span className="inline-block w-10 h-px bg-white/40" />
           </div>
+
+          {/* Coming soon badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-7 font-bold text-[0.7rem] tracking-[.25em] uppercase"
+            style={{
+              background: "rgba(255,255,255,0.15)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255,255,255,0.3)",
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            {t("online_soon_badge") as string}
+          </motion.div>
 
           <h2 className="font-playfair font-bold italic text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
             {t("online_title") as string}
           </h2>
 
-          <p className="font-playfair italic text-xl md:text-2xl text-white/80 mb-4">
+          <p className="font-playfair italic text-xl md:text-2xl text-white/85 mb-5 leading-snug">
             {t("online_subtitle") as string}
           </p>
 
@@ -69,51 +99,65 @@ export function OnlineClasses() {
             {t("online_text") as string}
           </p>
 
-          {/* Features row */}
+          {/* Feature pills */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {[
-              { icon: "🕐", label: "Horario flexible" },
-              { icon: "🌍", label: "Desde cualquier lugar" },
-              { icon: "🎯", label: "Clase de prueba gratis" },
-            ].map(({ icon: _icon, label }) => (
+            {(["f1", "f2", "f3"] as const).map((key) => (
               <div
-                key={label}
+                key={key}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase"
-                style={{ background: "rgba(255,255,255,0.15)", backdropFilter: "blur(8px)" }}
+                style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-white/70 shrink-0" />
-                {label}
+                {featureLabels[key][lang] ?? featureLabels[key].es}
               </div>
             ))}
           </div>
 
-          {/* CTA */}
-          <motion.a
-            href="https://wa.me/34627323794?text=Hola%20Brunela!%20Me%20interesan%20las%20clases%20online."
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-3 px-9 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all cursor-pointer"
-            style={{
-              background: "white",
-              color: "var(--color-primary)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-              style={{ color: "#25D366" }}
-            >
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            {t("online_cta") as string}
-          </motion.a>
+          {/* Email notify form */}
+          <form onSubmit={handleNotify} className="max-w-md mx-auto">
+            <p className="font-lato text-[0.68rem] font-bold tracking-[.2em] uppercase text-white/60 mb-4">
+              {t("online_notify_label") as string}
+            </p>
+            <div className="flex gap-2 items-stretch">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t("online_email_placeholder") as string}
+                required
+                className="flex-1 px-5 py-3.5 rounded-full text-sm font-lato outline-none"
+                style={{
+                  background: "rgba(255,255,255,0.15)",
+                  backdropFilter: "blur(12px)",
+                  border: "1.5px solid rgba(255,255,255,0.3)",
+                  color: "white",
+                }}
+              />
+              <motion.button
+                type="submit"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-6 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest shrink-0 cursor-pointer transition-all"
+                style={{
+                  background: "white",
+                  color: "var(--color-primary)",
+                  boxShadow: "0 6px 24px rgba(0,0,0,0.2)",
+                }}
+              >
+                {t("online_cta") as string}
+              </motion.button>
+            </div>
+
+            {submitted && (
+              <motion.p
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-4 font-lato text-sm font-semibold text-white/90"
+              >
+                ✓ {t("online_notify_label") as string}!
+              </motion.p>
+            )}
+          </form>
         </motion.div>
       </div>
     </section>

@@ -13,16 +13,16 @@ type ClassItem = {
   titleKey: TranslationKey;
   descKey: TranslationKey;
   fullKey: TranslationKey;
-  label: string;
+  labelKey: TranslationKey;
 };
 
 const CLASSES: ClassItem[] = [
-  { id: "pbt",        gridImg: "/fotos-landing/pbt.jpg",             detailImg: "/fotos-landing/Progressing Ballet Technique.jpg",      titleKey: "card_pbt_title",        descKey: "card_pbt_desc",        fullKey: "card_pbt_full",        label: "TÉCNICA" },
-  { id: "ballet",     gridImg: "/fotos-landing/Ballet.jpg",          detailImg: "/fotos-landing/Ballet.jpg",                            titleKey: "card_ballet_title",     descKey: "card_ballet_desc",     fullKey: "card_ballet_full",     label: "CLÁSICO" },
-  { id: "pct",        gridImg: "/fotos-landing/pct.jpg",             detailImg: "/fotos-landing/Progressing Contemporary Technique.jpg", titleKey: "card_pct_title",        descKey: "card_pct_desc",        fullKey: "card_pct_full",        label: "CONTEMP." },
-  { id: "stretching", gridImg: "/fotos-landing/Stretching.jpg",      detailImg: "/fotos-landing/stretching1.jpg",                       titleKey: "card_stretching_title", descKey: "card_stretching_desc", fullKey: "card_stretching_full", label: "FLEX." },
-  { id: "reformer",   gridImg: "/fotos-landing/Pilates Reformer.jpg",detailImg: "/fotos-landing/Pilates Reformer.jpg",                  titleKey: "card_reformer_title",   descKey: "card_reformer_desc",   fullKey: "card_reformer_full",   label: "FUERZA" },
-  { id: "mat",        gridImg: "/fotos-landing/Pilates Mat.png",      detailImg: "/fotos-landing/Pilates Mat.png",                       titleKey: "card_mat_title",        descKey: "card_mat_desc",        fullKey: "card_mat_full",        label: "CORE" },
+  { id: "pbt",        gridImg: "/fotos-landing/pbt.jpg",             detailImg: "/fotos-landing/Progressing Ballet Technique.jpg",      titleKey: "card_pbt_title",        descKey: "card_pbt_desc",        fullKey: "card_pbt_full",        labelKey: "class_label_pbt" },
+  { id: "ballet",     gridImg: "/fotos-landing/Ballet.jpg",          detailImg: "/fotos-landing/Ballet.jpg",                            titleKey: "card_ballet_title",     descKey: "card_ballet_desc",     fullKey: "card_ballet_full",     labelKey: "class_label_ballet" },
+  { id: "pct",        gridImg: "/fotos-landing/pct.jpg",             detailImg: "/fotos-landing/Progressing Contemporary Technique.jpg", titleKey: "card_pct_title",        descKey: "card_pct_desc",        fullKey: "card_pct_full",        labelKey: "class_label_pct" },
+  { id: "stretching", gridImg: "/fotos-landing/Stretching.jpg",      detailImg: "/fotos-landing/stretching1.jpg",                       titleKey: "card_stretching_title", descKey: "card_stretching_desc", fullKey: "card_stretching_full", labelKey: "class_label_stretching" },
+  { id: "reformer",   gridImg: "/fotos-landing/Pilates Reformer.jpg",detailImg: "/fotos-landing/Pilates Reformer.jpg",                  titleKey: "card_reformer_title",   descKey: "card_reformer_desc",   fullKey: "card_reformer_full",   labelKey: "class_label_reformer" },
+  { id: "mat",        gridImg: "/fotos-landing/Pilates Mat.png",      detailImg: "/fotos-landing/Pilates Mat.png",                       titleKey: "card_mat_title",        descKey: "card_mat_desc",        fullKey: "card_mat_full",        labelKey: "class_label_mat" },
 ];
 
 // Bento grid layout (3 cols, explicit placement):
@@ -142,7 +142,7 @@ export function Classes() {
                     <div>
                       <span className="font-lato text-[0.6rem] font-bold tracking-[.28em] uppercase"
                             style={{ color: "var(--color-gold)" }}>
-                        {active.label}
+                        {t(active.labelKey) as string}
                       </span>
                       <h3 className="font-playfair font-bold text-xl md:text-2xl mt-1"
                           style={{ color: "var(--color-body-text)" }}>
@@ -161,7 +161,7 @@ export function Classes() {
                      style={{ color: "var(--color-muted)" }}>
                     {t(active.fullKey) as string}
                   </p>
-                  <a href="https://wa.me/34627323794" target="_blank" rel="noopener noreferrer"
+                  <a href="https://wa.me/34612491637" target="_blank" rel="noopener noreferrer"
                      className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-full text-white text-xs font-bold uppercase tracking-widest transition-all hover:opacity-90 cursor-pointer"
                      style={{ background: "linear-gradient(135deg, var(--color-primary), var(--color-primary-light))", boxShadow: "0 4px 14px rgba(200,56,77,0.3)" }}>
                     {t("detail_cta") as string}
@@ -227,7 +227,7 @@ function ClassCard({
         <div className="absolute top-3 left-3">
           <span className="font-lato text-[0.56rem] font-bold tracking-widest px-2.5 py-1 rounded-full"
                 style={{ background: "rgba(255,255,255,0.2)", backdropFilter: "blur(6px)", color: "white" }}>
-            {cls.label}
+            {t(cls.labelKey) as string}
           </span>
         </div>
         {/* Active X */}
